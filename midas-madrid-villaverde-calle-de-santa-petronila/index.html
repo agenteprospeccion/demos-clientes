@@ -1,0 +1,490 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Midas Madrid Villaverde - Taller de Coches y Motos</title>
+    <meta name="description" content="Taller Midas en Madrid Villaverde. Reparación y mantenimiento de coches y motos. Valoración 4.1/5 en Google. Calle de Sta. Petronila, 11.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background-color: #080808;
+            color: #e0e0e0;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Syne', sans-serif;
+            font-weight: 700;
+        }
+
+        a {
+            color: #D9251C;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        a:hover {
+            color: #ff3a2f;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(8, 8, 8, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1.2rem 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(217, 37, 28, 0.2);
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        nav .logo {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #D9251C;
+            letter-spacing: -1px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        nav a {
+            color: #e0e0e0;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover, nav a.active {
+            color: #D9251C;
+        }
+
+        .nav-cta {
+            background: #D9251C;
+            color: white;
+            padding: 0.7rem 1.5rem;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .nav-cta:hover {
+            background: #ff3a2f;
+            color: white;
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: #D9251C;
+            border-radius: 2px;
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 60px;
+            height: 600px;
+            background: linear-gradient(135deg, rgba(217, 37, 28, 0.3) 0%, rgba(8, 8, 8, 0.5) 100%), 
+                        url('https://picsum.photos/seed/MidasMAhero/1800/1000');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            max-width: 700px;
+            z-index: 2;
+            padding: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            color: white;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.8);
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: #e0e0e0;
+            margin-bottom: 2rem;
+            text-shadow: 0 1px 10px rgba(0, 0, 0, 0.8);
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            cursor: pointer;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background: #D9251C;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #ff3a2f;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(217, 37, 28, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid #D9251C;
+        }
+
+        .btn-secondary:hover {
+            background: #D9251C;
+            transform: translateY(-2px);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 5rem 0;
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: #999;
+            margin-bottom: 3.5rem;
+            max-width: 600px;
+        }
+
+        /* Stats Section */
+        .stats {
+            background: linear-gradient(135deg, rgba(217, 37, 28, 0.15) 0%, rgba(217, 37, 28, 0.05) 100%);
+            padding: 4rem 0;
+            border-top: 1px solid rgba(217, 37, 28, 0.2);
+            border-bottom: 1px solid rgba(217, 37, 28, 0.2);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #D9251C;
+            margin-bottom: 0.5rem;
+            font-family: 'Syne', sans-serif;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .service-card {
+            background: linear-gradient(135deg, rgba(217, 37, 28, 0.1) 0%, rgba(217, 37, 28, 0.02) 100%);
+            border: 1px solid rgba(217, 37, 28, 0.3);
+            border-radius: 12px;
+            padding: 2.5rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: #D9251C;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            border-color: #D9251C;
+            transform: translateY(-5px);
+            background: linear-gradient(135deg, rgba(217, 37, 28, 0.2) 0%, rgba(217, 37, 28, 0.05) 100%);
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(217, 37, 28, 0.15);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover .service-icon {
+            background: rgba(217, 37, 28, 0.3);
+            transform: scale(1.1);
+        }
+
+        .service-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .service-card p {
+            color: #999;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* About Section */
+        .about {
+            background: linear-gradient(135deg, rgba(217, 37, 28, 0.05) 0%, rgba(8, 8, 8, 0) 100%);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image {
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+            height: 400px;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+
+        .about-content p {
+            color: #999;
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .feature-item {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .feature-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(217, 37, 28, 0.15);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #D9251C;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .feature-item h4 {
+            color: white;
+            margin-bottom: 0.3rem;
+        }
+
+        .feature-item p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* Reviews Section */
+        .reviews {
+            background: linear-gradient(135deg, rgba(217, 37, 28, 0.05) 0%, rgba(8, 8, 8, 0) 100%);
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .review-card {
+            background: linear-gradient(135deg, rgba(217, 37, 28, 0.1) 0%, rgba(217, 37, 28, 0.02) 100%);
+            border: 1px solid rgba(217, 37, 28, 0.3);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .review-card:hover {
+            border-color: #D9251C;
+            transform: translateY(-5px);
+        }
+
+        .review-stars {
+            color: #D9251C;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            letter-spacing: 2px;
+        }
+
+        .review-text {
+            color: #999;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            font-style: italic;
+        }
+
+        .review-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .review-avatar {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: rgba(217, 37, 28, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #D9251C;
+            font-weight: 700;
+        }
+
+        .review-info h4 {
+            color: white;
+            font-size: 0.95rem;
+        }
+
+        .review-info p {
+            color: #666;
+            font-size: 0.85rem;
+        }
+
+        .google-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            background: rgba(217, 37, 28, 0.15);
+            border: 1px solid rgba(217, 37, 28, 0.3);
+            padding: 1.2rem 2rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+
+        .google-rating {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #D9251C;
+            font-family: 'Syne', sans-serif;
+        }
+
+        .google-info {
+            display: flex;
+            
