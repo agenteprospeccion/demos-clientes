@@ -1,0 +1,473 @@
+```html
+<!DOCTYPE html>
+<html lang="es" itemscope itemtype="https://schema.org/LocalBusiness">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Talleres E. Calderón - Taller Mecánico Profesional en Madrid</title>
+    <meta name="description" content="Talleres E. Calderón | Taller mecánico profesional en Madrid. Reparación, mantenimiento y servicios de mecánica. 4.6★ en Google. Gran Vía de San Francisco, 7. ☎ 913 64 50 12">
+    <meta name="keywords" content="taller mecánico Madrid, reparación coches Madrid, talleres Madrid, mecánica profesional, cambio aceite, neumáticos Madrid">
+    <meta name="theme-color" content="#D9251C">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <link rel="canonical" href="https://talleres-e-calderon.es/">
+    
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Talleres E. Calderón",
+      "image": "https://picsum.photos/seed/Tallereshero/1800/1000",
+      "description": "Taller mecánico profesional con servicios completos de reparación y mantenimiento",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Gran Vía de San Francisco, 7",
+        "addressLocality": "Madrid",
+        "postalCode": "28005",
+        "addressCountry": "ES"
+      },
+      "telephone": "+34 913 64 50 12",
+      "url": "https://talleres-e-calderon.es/",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.6",
+        "reviewCount": "60"
+      }
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background-color: #080808;
+            color: #e0e0e0;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Syne', sans-serif;
+            color: #ffffff;
+            font-weight: 700;
+        }
+
+        a {
+            color: #D9251C;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        a:hover {
+            color: #ff3b30;
+            text-decoration: underline;
+        }
+
+        button {
+            cursor: pointer;
+            border: none;
+            font-family: 'DM Sans', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background-color: #D9251C;
+            color: white;
+            padding: 12px 32px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        .btn-primary:hover {
+            background-color: #ff3b30;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(217, 37, 28, 0.3);
+        }
+
+        /* NAVEGACIÓN FIJA */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(8, 8, 8, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 16px 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(217, 37, 28, 0.2);
+        }
+
+        nav .logo {
+            font-family: 'Syne', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: #D9251C;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 32px;
+        }
+
+        nav a {
+            color: #e0e0e0;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: #D9251C;
+            text-decoration: none;
+        }
+
+        .nav-cta {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+        }
+
+        .nav-phone {
+            color: #D9251C;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 6px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background-color: #D9251C;
+            border-radius: 2px;
+        }
+
+        /* HERO */
+        .hero {
+            margin-top: 70px;
+            position: relative;
+            height: 600px;
+            background: linear-gradient(135deg, rgba(217, 37, 28, 0.15) 0%, rgba(8, 8, 8, 0.7) 100%),
+                        url('https://picsum.photos/seed/Tallereshero/1800/1000') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 50%, rgba(217, 37, 28, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 32px;
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            margin-bottom: 16px;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 32px;
+            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: white;
+            padding: 12px 32px;
+            border: 2px solid #D9251C;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        .btn-secondary:hover {
+            background-color: #D9251C;
+        }
+
+        /* BARRA DE ESTADÍSTICAS */
+        .stats-bar {
+            background: linear-gradient(90deg, rgba(217, 37, 28, 0.1) 0%, rgba(217, 37, 28, 0.05) 100%);
+            border-top: 1px solid rgba(217, 37, 28, 0.2);
+            border-bottom: 1px solid rgba(217, 37, 28, 0.2);
+            padding: 48px 32px;
+        }
+
+        .stats-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 48px;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 36px;
+            color: #D9251C;
+            margin-bottom: 8px;
+        }
+
+        .stat-item p {
+            color: #999;
+            font-size: 14px;
+        }
+
+        /* SECCIONES PRINCIPALES */
+        section {
+            padding: 80px 32px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        section h2 {
+            font-size: 44px;
+            margin-bottom: 48px;
+            text-align: center;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #999;
+            font-size: 16px;
+            margin-bottom: 48px;
+        }
+
+        /* SERVICIOS */
+        .servicios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+        }
+
+        .servicio-card {
+            background: rgba(217, 37, 28, 0.05);
+            border: 1px solid rgba(217, 37, 28, 0.2);
+            border-radius: 8px;
+            padding: 32px;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .servicio-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #D9251C 0%, transparent 100%);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+
+        .servicio-card:hover {
+            border-color: #D9251C;
+            background: rgba(217, 37, 28, 0.1);
+            transform: translateY(-8px);
+        }
+
+        .servicio-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .servicio-icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+        }
+
+        .servicio-card h3 {
+            font-size: 22px;
+            margin-bottom: 12px;
+        }
+
+        .servicio-card p {
+            color: #999;
+            font-size: 14px;
+        }
+
+        /* NOSOTROS */
+        #nosotros {
+            background: rgba(217, 37, 28, 0.03);
+            border-top: 1px solid rgba(217, 37, 28, 0.1);
+            border-bottom: 1px solid rgba(217, 37, 28, 0.1);
+        }
+
+        .nosotros-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: center;
+        }
+
+        .nosotros-text h3 {
+            font-size: 32px;
+            margin-bottom: 24px;
+            color: #D9251C;
+        }
+
+        .nosotros-text p {
+            margin-bottom: 16px;
+            color: #b0b0b0;
+            line-height: 1.8;
+        }
+
+        .nosotros-features {
+            list-style: none;
+            margin-top: 32px;
+        }
+
+        .nosotros-features li {
+            padding: 12px 0;
+            padding-left: 32px;
+            position: relative;
+            color: #b0b0b0;
+        }
+
+        .nosotros-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #D9251C;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .nosotros-image {
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid rgba(217, 37, 28, 0.2);
+        }
+
+        .nosotros-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* RESEÑAS */
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+        }
+
+        .review-card {
+            background: rgba(217, 37, 28, 0.05);
+            border: 1px solid rgba(217, 37, 28, 0.2);
+            border-radius: 8px;
+            padding: 32px;
+        }
+
+        .review-rating {
+            color: #D9251C;
+            font-size: 16px;
+            margin-bottom: 12px;
+            letter-spacing: 2px;
+        }
+
+        .review-text {
+            color: #b0b0b0;
+            margin-bottom: 20px;
+            font-style: italic;
+            line-height: 1.8;
+        }
+
+        .review-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .review-avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #D9251C, #ff3b30);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .review-author-info h4 {
+            font-size: 14px;
+            margin-bottom: 2px;
+        }
+
+        .review-author-info p {
+            font-size: 12px;
+            color: #666;
+        }
+
+        /* FAQ */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid rgba(217, 37, 28, 0.2);
+            padding: 24px 0;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor:
