@@ -1,0 +1,484 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Taller Chapa y Pintura en Puente de Vallecas | Valrodri</title>
+    <meta name="description" content="Taller de chapa y pintura profesional en Puente de Vallecas. Servicio de reparación de carrocería, pintura y pulido. Taller Mutua Madrileña. ⭐ 4.7/5 (207 reseñas)">
+    <meta name="keywords" content="taller chapa pintura Vallecas, reparación carrocería Madrid, pintura coche, chapa y pintura Vallecas">
+    <meta property="og:title" content="Taller Chapa y Pintura en Puente de Vallecas | Valrodri">
+    <meta property="og:description" content="Taller de chapa y pintura profesional. Servicio Mutua Madrileña. 4.7/5 (207 reseñas)">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tallercochesvallecas.es/">
+    <meta name="theme-color" content="#080808">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background-color: #080808;
+            color: #e0e0e0;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Utilidades */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Syne', sans-serif;
+            color: #ffffff;
+            font-weight: 700;
+        }
+
+        .accent-red {
+            color: #D9251C;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            background-color: #D9251C;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            border: 2px solid #D9251C;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 16px;
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        .btn:hover {
+            background-color: transparent;
+            color: #D9251C;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(217, 37, 28, 0.3);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: #D9251C;
+            border: 2px solid #D9251C;
+        }
+
+        .btn-secondary:hover {
+            background-color: #D9251C;
+            color: white;
+        }
+
+        /* Navegación */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(8, 8, 8, 0.98);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(217, 37, 28, 0.2);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Syne', sans-serif;
+            font-size: 24px;
+            font-weight: 800;
+            color: white;
+        }
+
+        .logo .accent {
+            color: #D9251C;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #e0e0e0;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #D9251C;
+        }
+
+        .nav-phone {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #D9251C;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 70px;
+            min-height: 100vh;
+            background: linear-gradient(135deg, rgba(217, 37, 28, 0.15) 0%, rgba(8, 8, 8, 0.7) 100%), url('https://picsum.photos/seed/Tallerchero/1800/1000') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            z-index: 2;
+            max-width: 800px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            line-height: 1.1;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            color: #b0b0b0;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Stats Bar */
+        .stats {
+            background: linear-gradient(90deg, #1a1a1a 0%, #0f0f0f 100%);
+            padding: 60px 0;
+            border-top: 1px solid rgba(217, 37, 28, 0.2);
+            border-bottom: 1px solid rgba(217, 37, 28, 0.2);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 2.5rem;
+            color: #D9251C;
+            margin-bottom: 10px;
+        }
+
+        .stat-item p {
+            color: #a0a0a0;
+            font-weight: 500;
+        }
+
+        /* Servicios */
+        .servicios {
+            padding: 100px 0;
+            background-color: #0a0a0a;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 60px;
+            line-height: 1.2;
+        }
+
+        .servicios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .service-card {
+            background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+            padding: 40px;
+            border-radius: 8px;
+            border: 1px solid rgba(217, 37, 28, 0.1);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .service-card:hover {
+            border-color: #D9251C;
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(217, 37, 28, 0.15);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+
+        .service-card p {
+            color: #a0a0a0;
+            margin-bottom: 20px;
+        }
+
+        /* Nosotros */
+        .nosotros {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+        }
+
+        .nosotros-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .nosotros-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+
+        .nosotros-text p {
+            margin-bottom: 20px;
+            color: #b0b0b0;
+            font-size: 1.1rem;
+        }
+
+        .nosotros-image {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            aspect-ratio: 1;
+        }
+
+        .nosotros-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .nosotros-features {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin: 30px 0;
+        }
+
+        .feature-item {
+            display: flex;
+            gap: 15px;
+            align-items: flex-start;
+        }
+
+        .feature-icon {
+            color: #D9251C;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+            margin-top: 3px;
+        }
+
+        .feature-item p {
+            color: #b0b0b0;
+        }
+
+        /* Reseñas */
+        .resenas {
+            padding: 100px 0;
+            background-color: #080808;
+        }
+
+        .resenas-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .rating-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #D9251C 0%, #a01d17 100%);
+            color: white;
+            padding: 20px 40px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .rating-value {
+            font-size: 1.8rem;
+        }
+
+        .rating-stars {
+            color: #ffc107;
+            margin: 0 10px;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .review-card {
+            background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+            padding: 30px;
+            border-radius: 8px;
+            border-left: 4px solid #D9251C;
+        }
+
+        .review-stars {
+            color: #ffc107;
+            margin-bottom: 15px;
+            font-size: 1rem;
+        }
+
+        .review-text {
+            color: #b0b0b0;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        .review-author {
+            color: #D9251C;
+            font-weight: 600;
+        }
+
+        /* FAQ */
+        .faq {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+            margin-bottom: 20px;
+            border-radius: 8px;
+            border: 1px solid rgba(217, 37, 28, 0.1);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background-color: rgba(217, 37, 28, 0.05);
+        }
+
+        .faq-toggle {
+            color: #D9251C;
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            padding: 0 20px;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding: 0 20px 20px 20px;
+        }
+
+        .faq-answer p {
+            color: #b0b0b0;
+        }
+
+        /* CTA Final */
+        .cta-final {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #D9251C 0%, #a01d17 100%);
+            text-align: center;
+        }
+
+        .cta-final h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .cta-final p {
+            font-size: 1.2rem;
+            margin-bottom:
