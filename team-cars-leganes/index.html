@@ -1,0 +1,494 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="TEAM CARS LEGANÉS - Taller mecánico profesional en Leganés, Madrid. Reparación y mantenimiento de vehículos con garantía. Valoración 5/5.">
+    <meta name="keywords" content="taller mecánico Leganés, reparación coches, mantenimiento vehículos Madrid">
+    <title>TEAM CARS LEGANÉS | Taller Mecánico Profesional en Leganés, Madrid</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background-color: #080808;
+            color: #ffffff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* NAVBAR */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(8, 8, 8, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(217, 37, 28, 0.1);
+        }
+
+        .nav-logo {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #D9251C;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #D9251C;
+        }
+
+        .nav-cta {
+            background-color: #D9251C;
+            color: #ffffff;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .nav-cta:hover {
+            background-color: #b81e18;
+            transform: translateY(-2px);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background-color: #D9251C;
+            margin: 5px 0;
+            transition: all 0.3s ease;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            margin-top: 60px;
+            min-height: 80vh;
+            background: linear-gradient(135deg, rgba(217, 37, 28, 0.1) 0%, rgba(8, 8, 8, 0.8) 100%),
+                        url('https://picsum.photos/seed/TEAMCARhero/1800/1000');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(180deg, transparent 0%, rgba(8, 8, 8, 0.5) 100%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 2rem;
+        }
+
+        .hero h1 {
+            font-family: 'Syne', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero h1 .red-accent {
+            color: #D9251C;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            color: #e0e0e0;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background-color: #D9251C;
+            color: #ffffff;
+        }
+
+        .btn-primary:hover {
+            background-color: #b81e18;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(217, 37, 28, 0.3);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: #ffffff;
+            border: 2px solid #D9251C;
+        }
+
+        .btn-secondary:hover {
+            background-color: #D9251C;
+            transform: translateY(-3px);
+        }
+
+        /* STATS SECTION */
+        .stats {
+            background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+            padding: 4rem 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            border-bottom: 1px solid rgba(217, 37, 28, 0.1);
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: 'Syne', sans-serif;
+            font-size: 3rem;
+            font-weight: 800;
+            color: #D9251C;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: #b0b0b0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* SERVICIOS SECTION */
+        .servicios {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: 'Syne', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background-color: #D9251C;
+            border-radius: 2px;
+        }
+
+        .servicios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .servicio-card {
+            background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid rgba(217, 37, 28, 0.1);
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+
+        .servicio-card:hover {
+            border-color: #D9251C;
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(217, 37, 28, 0.15);
+        }
+
+        .servicio-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .servicio-card h3 {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .servicio-card p {
+            color: #b0b0b0;
+            margin-bottom: 1.5rem;
+        }
+
+        .servicio-card a {
+            color: #D9251C;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: gap 0.3s ease;
+        }
+
+        .servicio-card a:hover {
+            gap: 1rem;
+        }
+
+        /* NOSOTROS SECTION */
+        .nosotros {
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+            border-top: 1px solid rgba(217, 37, 28, 0.1);
+        }
+
+        .nosotros-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .nosotros-text h2 {
+            font-family: 'Syne', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .nosotros-text h2 span {
+            color: #D9251C;
+        }
+
+        .nosotros-text p {
+            color: #b0b0b0;
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+        }
+
+        .nosotros-image {
+            width: 100%;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(217, 37, 28, 0.2);
+        }
+
+        .nosotros-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .features-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .feature-icon {
+            width: 30px;
+            height: 30px;
+            background-color: #D9251C;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            flex-shrink: 0;
+        }
+
+        /* RESEÑAS SECTION */
+        .reseñas {
+            padding: 5rem 2rem;
+        }
+
+        .reseñas-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .reseñas-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .rating-display {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .rating-number {
+            font-family: 'Syne', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #D9251C;
+        }
+
+        .stars {
+            font-size: 1.5rem;
+            color: #D9251C;
+        }
+
+        .review-count {
+            color: #b0b0b0;
+            font-size: 0.95rem;
+        }
+
+        .reseñas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .review-card {
+            background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid rgba(217, 37, 28, 0.1);
+        }
+
+        .review-stars {
+            color: #D9251C;
+            margin-bottom: 1rem;
+        }
+
+        .review-text {
+            color: #b0b0b0;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+
+        .review-author {
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .review-date {
+            color: #808080;
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+        }
+
+        /* FAQ SECTION */
+        .faq {
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+            border-top: 1px solid rgba(217, 37, 28, 0.1);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: transparent;
+            border-bottom: 1px solid rgba(217, 37, 28, 0.1);
+            padding: 1.5rem 0;
+            cursor: pointer;
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 1.1rem;
+            user-select: none;
+            transition: color 0.3s ease;
+        }
+
+        .faq-question:hover {
+            color: #D9251C;
+        }
+
+        .faq-toggle {
+            font-size: 1.5rem;
+            color: #D9251C;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-
