@@ -1,0 +1,525 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="RZ MOTORS - Taller mecánico en Madrid con 4.9/5 valoración. Servicio profesional en Puente de Vallecas. Llama ahora: 611 21 68 44">
+    <meta name="keywords" content="taller mecánico Madrid, reparación autos, mantenimiento vehículos, Puente de Vallecas">
+    <meta name="robots" content="index, follow">
+    <title>RZ MOTORS - Taller Mecánico Profesional en Madrid</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background-color: #080808;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Syne', sans-serif;
+            font-weight: 700;
+        }
+
+        a {
+            color: #D9251C;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        a:hover {
+            opacity: 0.8;
+        }
+
+        /* NAVBAR */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(8, 8, 8, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 0 20px;
+            border-bottom: 1px solid rgba(217, 37, 28, 0.2);
+        }
+
+        .navbar-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-family: 'Syne', sans-serif;
+            font-size: 24px;
+            font-weight: 800;
+            color: #D9251C;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo-icon {
+            width: 28px;
+            height: 28px;
+            background-color: #D9251C;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: #080808;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            font-size: 14px;
+            font-weight: 500;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #D9251C;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .cta-button {
+            background-color: #D9251C;
+            color: white;
+            padding: 10px 24px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .cta-button:hover {
+            background-color: #b81f16;
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: #D9251C;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            margin-top: 70px;
+            height: 600px;
+            background: linear-gradient(135deg, rgba(217, 37, 28, 0.3) 0%, rgba(8, 8, 8, 0.7) 100%), 
+                        url('https://picsum.photos/seed/RZMOTORhero/1800/1000') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(217, 37, 28, 0.2) 0%, rgba(8, 8, 8, 0.5) 100%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero h1 .accent {
+            color: #D9251C;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: #cccccc;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background-color: #D9251C;
+            color: white;
+            padding: 15px 40px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #b81f16;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: #D9251C;
+            padding: 15px 40px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 16px;
+            border: 2px solid #D9251C;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background-color: #D9251C;
+            color: white;
+        }
+
+        /* STATS BAR */
+        .stats {
+            background-color: #111111;
+            padding: 60px 20px;
+            border-top: 1px solid rgba(217, 37, 28, 0.2);
+            border-bottom: 1px solid rgba(217, 37, 28, 0.2);
+        }
+
+        .stats-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 36px;
+            color: #D9251C;
+            margin-bottom: 10px;
+        }
+
+        .stat-item p {
+            color: #aaaaaa;
+            font-size: 14px;
+        }
+
+        /* SERVICES SECTION */
+        .services {
+            padding: 100px 20px;
+            background-color: #080808;
+        }
+
+        .section-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .section-header .accent {
+            color: #D9251C;
+        }
+
+        .section-header p {
+            font-size: 16px;
+            color: #aaaaaa;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: #111111;
+            padding: 40px;
+            border-radius: 8px;
+            border: 1px solid rgba(217, 37, 28, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .service-card:hover {
+            border-color: #D9251C;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(217, 37, 28, 0.2);
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #D9251C 0%, #ff5c52 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .service-card p {
+            color: #aaaaaa;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .service-card a {
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        /* ABOUT SECTION */
+        .about {
+            padding: 100px 20px;
+            background-color: #111111;
+        }
+
+        .about-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+            height: 400px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about-image::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(135deg, #D9251C 0%, transparent 100%);
+            border-radius: 8px;
+            z-index: -1;
+        }
+
+        .about-content h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .about-content p {
+            color: #aaaaaa;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .about-features {
+            margin-top: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .feature-item {
+            display: flex;
+            gap: 15px;
+            align-items: flex-start;
+        }
+
+        .feature-check {
+            width: 24px;
+            height: 24px;
+            background-color: #D9251C;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            color: white;
+            font-weight: bold;
+        }
+
+        .feature-item p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        /* REVIEWS SECTION */
+        .reviews {
+            padding: 100px 20px;
+            background-color: #080808;
+        }
+
+        .reviews-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .reviews-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .rating-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background-color: #111111;
+            padding: 15px 25px;
+            border-radius: 50px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(217, 37, 28, 0.3);
+        }
+
+        .stars {
+            color: #D9251C;
+            font-size: 18px;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .review-card {
+            background-color: #111111;
+            padding: 30px;
+            border-radius: 8px;
+            border: 1px solid rgba(217, 37, 28, 0.1);
+        }
+
+        .review-stars {
+            color: #D9251C;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+
+        .review-text {
+            color: #cccccc;
+            margin-bottom: 20px;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .review-author {
+            font-weight: 600;
+            color: #ffffff;
+            font-size: 14px;
+        }
+
+        .review-author-title {
+            color: #888888;
+            font-size: 12px;
+        }
+
+        /* FAQ SECTION */
+        .faq {
+            padding: 100px 20px;
+            background-color: #111111;
+        }
+
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background-color: #080808;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            border: 1px solid rgba(217, 37, 28, 0.1);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            border-color: #D9251C;
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: #ffffff;
+            user-select: none;
