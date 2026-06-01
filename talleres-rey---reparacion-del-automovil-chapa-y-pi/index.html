@@ -1,0 +1,496 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Talleres Rey - Reparación del automóvil, chapa y pintura en Madrid. Más de 50 clientes satisfechos. Contacta al 914 75 32 90">
+    <meta name="keywords" content="reparación automóvil, chapa y pintura, talleres Madrid, Usera">
+    <meta name="author" content="Talleres Rey">
+    <title>Talleres Rey | Reparación de Automóviles y Chapa y Pintura en Madrid</title>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background-color: #080808;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Syne', sans-serif;
+            font-weight: 700;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ========== HEADER ========== */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(8, 8, 8, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 999;
+            border-bottom: 1px solid rgba(217, 37, 28, 0.2);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        .logo {
+            font-family: 'Syne', sans-serif;
+            font-size: 24px;
+            font-weight: 800;
+            color: #D9251C;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo::before {
+            content: "⚙️";
+            font-size: 28px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            font-size: 14px;
+        }
+
+        .nav-links a:hover {
+            color: #D9251C;
+        }
+
+        .nav-cta {
+            background-color: #D9251C;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            font-size: 14px;
+        }
+
+        .nav-cta:hover {
+            background-color: #b01d15;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(217, 37, 28, 0.3);
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: #D9251C;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* ========== HERO SECTION ========== */
+        .hero {
+            margin-top: 60px;
+            min-height: 600px;
+            background: linear-gradient(135deg, rgba(8, 8, 8, 0.8) 0%, rgba(217, 37, 28, 0.1) 100%), 
+                        url('https://picsum.photos/seed/TALLEREShero/1800/1000') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 50%, rgba(217, 37, 28, 0.15) 0%, transparent 50%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: white;
+            max-width: 700px;
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            color: #ffffff;
+        }
+
+        .hero h1 .highlight {
+            color: #D9251C;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: #cccccc;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 14px 32px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        .btn-primary {
+            background-color: #D9251C;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #b01d15;
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(217, 37, 28, 0.4);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: #D9251C;
+            border: 2px solid #D9251C;
+        }
+
+        .btn-secondary:hover {
+            background-color: #D9251C;
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* ========== STATS SECTION ========== */
+        .stats {
+            background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+            padding: 60px 0;
+            border-top: 1px solid rgba(217, 37, 28, 0.2);
+            border-bottom: 1px solid rgba(217, 37, 28, 0.2);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 48px;
+            font-weight: 800;
+            color: #D9251C;
+            font-family: 'Syne', sans-serif;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 16px;
+            color: #aaaaaa;
+            font-weight: 500;
+        }
+
+        /* ========== SERVICES SECTION ========== */
+        .services {
+            padding: 80px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 44px;
+            margin-bottom: 15px;
+        }
+
+        .section-header p {
+            font-size: 18px;
+            color: #aaaaaa;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+            padding: 40px;
+            border-radius: 10px;
+            border: 1px solid rgba(217, 37, 28, 0.2);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .service-card:hover {
+            border-color: #D9251C;
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(217, 37, 28, 0.15);
+        }
+
+        .service-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .service-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: #ffffff;
+        }
+
+        .service-card p {
+            color: #aaaaaa;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        /* ========== ABOUT SECTION ========== */
+        .about {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: 40px;
+            margin-bottom: 30px;
+        }
+
+        .about-text p {
+            font-size: 16px;
+            color: #cccccc;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .about-image {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            height: 400px;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .about-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(217, 37, 28, 0.2) 0%, transparent 100%);
+            border-radius: 10px;
+        }
+
+        /* ========== REVIEWS SECTION ========== */
+        .reviews {
+            padding: 80px 0;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .review-card {
+            background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+            padding: 30px;
+            border-radius: 10px;
+            border: 1px solid rgba(217, 37, 28, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .review-card:hover {
+            border-color: #D9251C;
+            transform: translateY(-5px);
+        }
+
+        .stars {
+            color: #D9251C;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .review-text {
+            color: #cccccc;
+            font-size: 15px;
+            margin-bottom: 20px;
+            line-height: 1.7;
+            font-style: italic;
+        }
+
+        .review-author {
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 5px;
+        }
+
+        .review-date {
+            font-size: 12px;
+            color: #888888;
+        }
+
+        .google-badge {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+            padding: 30px;
+            border-radius: 10px;
+            border: 2px solid #D9251C;
+            text-align: center;
+            grid-column: 1 / -1;
+        }
+
+        .google-badge-icon {
+            font-size: 48px;
+        }
+
+        .google-badge-text h3 {
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+
+        .google-badge-text p {
+            color: #aaaaaa;
+            font-size: 14px;
+        }
+
+        /* ========== FAQ SECTION ========== */
+        .faq {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+        }
+
+        .faq-container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: transparent;
+            border-bottom: 1px solid rgba(217, 37, 28, 0.2);
+            padding: 25px 0;
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            color: #ffffff;
+            transition: color 0.3s ease;
+        }
+
+        .faq-question:hover {
+            color: #D9251C;
+        }
+
+        .faq-icon {
+            font-size: 20px;
+            transition: transform 0.3s ease;
+            color: #D9251C;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            color: #aaaaaa;
+            padding-top: 0;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding-top: 20px;
+        }
+
+        /* ========== CTA SECTION ========== */
+        .cta {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #D9251C
