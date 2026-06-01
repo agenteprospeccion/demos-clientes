@@ -1,0 +1,479 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repacar Alcalá - Taller de Mecánica, Chapa y Pintura en Alcalá de Henares</title>
+    <meta name="description" content="Taller profesional de mecánica, chapa y pintura en Alcalá de Henares. Reparación de vehículos, mantenimiento y pintura de calidad. ⭐ 4.6/5 en Google">
+    <meta name="keywords" content="taller mecánica Alcalá de Henares, reparación vehículos, chapa y pintura, mantenimiento de autos">
+    <meta property="og:title" content="Repacar Alcalá - Taller de Mecánica y Pintura">
+    <meta property="og:description" content="Taller profesional en Alcalá de Henares. Mecánica, chapa y pintura. Valoración 4.6/5 ⭐">
+    <meta property="og:image" content="https://picsum.photos/seed/Repacarhero/1800/1000">
+    <meta property="og:type" content="website">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background-color: #080808;
+            color: #e0e0e0;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Syne', sans-serif;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        a {
+            color: #D9251C;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        a:hover {
+            color: #ff4444;
+        }
+
+        .accent-color {
+            color: #D9251C;
+        }
+
+        button, .btn {
+            background-color: #D9251C;
+            color: #ffffff;
+            border: none;
+            padding: 14px 32px;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        button:hover, .btn:hover {
+            background-color: #ff4444;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(217, 37, 28, 0.4);
+        }
+
+        /* NAVEGACIÓN */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(8, 8, 8, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 0;
+            border-bottom: 1px solid rgba(217, 37, 28, 0.2);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            font-family: 'Syne', sans-serif;
+            color: #ffffff;
+        }
+
+        .logo span {
+            color: #D9251C;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #e0e0e0;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #D9251C;
+        }
+
+        .nav-phone {
+            color: #D9251C;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 6px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background-color: #D9251C;
+            border-radius: 2px;
+        }
+
+        /* HERO */
+        .hero {
+            margin-top: 70px;
+            min-height: 600px;
+            background: linear-gradient(135deg, rgba(217, 37, 28, 0.1) 0%, rgba(8, 8, 8, 0.8) 100%), url('https://picsum.photos/seed/Repacarhero/1800/1000') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #ffffff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(8, 8, 8, 0.4);
+            z-index: 1;
+        }
+
+        .hero-content {
+            max-width: 700px;
+            z-index: 2;
+            position: relative;
+            padding: 0 20px;
+            animation: fadeInUp 1s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero h1 .accent-color {
+            color: #D9251C;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            color: #cccccc;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            border: 2px solid #D9251C;
+            color: #D9251C;
+        }
+
+        .btn-secondary:hover {
+            background-color: #D9251C;
+            color: #ffffff;
+        }
+
+        /* ESTADÍSTICAS */
+        .stats-bar {
+            background: linear-gradient(90deg, #1a1a1a 0%, #0a0a0a 100%);
+            padding: 50px 30px;
+            border-top: 1px solid rgba(217, 37, 28, 0.2);
+            border-bottom: 1px solid rgba(217, 37, 28, 0.2);
+        }
+
+        .stats-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 40px;
+            color: #D9251C;
+            margin-bottom: 10px;
+        }
+
+        .stat-item p {
+            color: #888888;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* SECCIONES */
+        section {
+            padding: 80px 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        section h2 {
+            font-size: 42px;
+            margin-bottom: 50px;
+            text-align: center;
+            position: relative;
+            padding-bottom: 20px;
+        }
+
+        section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: #D9251C;
+            border-radius: 2px;
+        }
+
+        /* SERVICIOS */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .service-card {
+            background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+            padding: 40px;
+            border-radius: 12px;
+            border: 1px solid rgba(217, 37, 28, 0.1);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .service-card:hover {
+            border-color: rgba(217, 37, 28, 0.5);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(217, 37, 28, 0.15);
+        }
+
+        .service-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        .service-card p {
+            color: #999999;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        /* SOBRE NOSOTROS */
+        .about-section {
+            background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+            border-radius: 12px;
+            padding: 60px;
+            border: 1px solid rgba(217, 37, 28, 0.1);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            color: #999999;
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        .about-features {
+            margin-top: 30px;
+        }
+
+        .feature-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+            padding: 12px 0;
+        }
+
+        .feature-item .icon {
+            color: #D9251C;
+            font-size: 20px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .about-image {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(217, 37, 28, 0.2);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* RESEÑAS */
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .review-card {
+            background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid rgba(217, 37, 28, 0.1);
+        }
+
+        .stars {
+            color: #D9251C;
+            font-size: 16px;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+        }
+
+        .review-text {
+            color: #999999;
+            margin-bottom: 15px;
+            line-height: 1.8;
+            font-size: 14px;
+        }
+
+        .review-author {
+            font-weight: 600;
+            color: #ffffff;
+            font-size: 14px;
+        }
+
+        .review-rating {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(217, 37, 28, 0.1);
+        }
+
+        .rating-badge {
+            background-color: #D9251C;
+            color: #ffffff;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 13px;
+        }
+
+        /* FAQ */
+        .faq-container {
+            max-width: 700px;
+            margin: 40px auto 0;
+        }
+
+        .faq-item {
+            background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+            border: 1px solid rgba(217, 37, 28, 0.1);
+            border-radius: 12px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            border-color: rgba(217, 37, 28, 0.3);
+        }
+
+        .faq-question {
+            background: linear-gradient(90deg, #1a1a1a 0%, #0f0f0f 100%);
+            padding: 25px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: #ffffff;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: linear-gradient(90deg, #2a2a2a 0%, #1a1a1a 100%);
+        }
+
+        .faq-toggle {
+            color: #D9251C;
+            font-size: 24px;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            padding: 0 25px;
+        }
+
+        .faq-answer.active {
