@@ -1,0 +1,470 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Midas Leganés - Taller de coches y motos. Reparación, mantenimiento y servicios profesionales. Av. Reina Sofía, 13, Leganés, Madrid">
+    <meta name="keywords" content="taller coches Leganés, reparación motos Madrid, taller mecánico, mantenimiento vehículos">
+    <title>Midas Leganés | Taller de Coches y Motos | Av. Reina Sofía</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background-color: #080808;
+            color: #e0e0e0;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* SCROLLBAR */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #080808;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #D9251C;
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #a01a14;
+        }
+
+        /* NAVEGACIÓN */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(8, 8, 8, 0.98);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 2rem;
+            border-bottom: 1px solid rgba(217, 37, 28, 0.2);
+        }
+
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #D9251C;
+            letter-spacing: 2px;
+        }
+
+        nav .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        nav .nav-links a {
+            color: #e0e0e0;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav .nav-links a:hover {
+            color: #D9251C;
+        }
+
+        nav .cta-btn {
+            background-color: #D9251C;
+            color: white;
+            padding: 0.7rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+
+        nav .cta-btn:hover {
+            background-color: #a01a14;
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background-color: #D9251C;
+            border-radius: 2px;
+            transition: 0.3s;
+        }
+
+        /* HERO */
+        .hero {
+            margin-top: 70px;
+            background: linear-gradient(135deg, rgba(217, 37, 28, 0.3), rgba(20, 20, 20, 0.8)), 
+                        url('https://picsum.photos/seed/MidasLEhero/1800/1000');
+            background-size: cover;
+            background-position: center;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .hero-content h1 {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
+        }
+
+        .hero-content p {
+            font-size: clamp(1rem, 3vw, 1.3rem);
+            margin-bottom: 2rem;
+            color: #d0d0d0;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .hero-ctas .btn {
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background-color: #D9251C;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #a01a14;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(217, 37, 28, 0.4);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: white;
+            border: 2px solid #D9251C;
+        }
+
+        .btn-secondary:hover {
+            background-color: #D9251C;
+            transform: translateY(-2px);
+        }
+
+        /* ESTADÍSTICAS */
+        .stats {
+            background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+            padding: 4rem 2rem;
+            border-bottom: 1px solid rgba(217, 37, 28, 0.1);
+        }
+
+        .stats .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: 'Syne', sans-serif;
+            font-size: 3rem;
+            font-weight: 800;
+            color: #D9251C;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: #b0b0b0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* SERVICIOS */
+        .servicios {
+            padding: 5rem 2rem;
+            background-color: #080808;
+        }
+
+        .servicios .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .servicios h2 {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 3rem;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .servicios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .servicio-card {
+            background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+            border: 1px solid rgba(217, 37, 28, 0.2);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .servicio-card:hover {
+            border-color: #D9251C;
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(217, 37, 28, 0.15);
+        }
+
+        .servicio-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .servicio-card h3 {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .servicio-card p {
+            color: #b0b0b0;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .servicio-card .learn-more {
+            color: #D9251C;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .servicio-card .learn-more:hover {
+            color: #a01a14;
+        }
+
+        /* NOSOTROS */
+        .nosotros {
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+            border-top: 1px solid rgba(217, 37, 28, 0.1);
+            border-bottom: 1px solid rgba(217, 37, 28, 0.1);
+        }
+
+        .nosotros .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .nosotros-img {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(217, 37, 28, 0.2);
+        }
+
+        .nosotros-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .nosotros-content h2 {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .nosotros-content p {
+            color: #b0b0b0;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .nosotros-list {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .nosotros-list li {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid rgba(217, 37, 28, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .nosotros-list li:before {
+            content: "✓";
+            color: #D9251C;
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+
+        /* RESEÑAS */
+        .resenas {
+            padding: 5rem 2rem;
+            background-color: #080808;
+        }
+
+        .resenas .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .resenas h2 {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 3rem;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .resenas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .resena-card {
+            background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+            border: 1px solid rgba(217, 37, 28, 0.2);
+            border-radius: 12px;
+            padding: 2rem;
+        }
+
+        .resena-stars {
+            color: #D9251C;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .resena-text {
+            color: #b0b0b0;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+            font-style: italic;
+        }
+
+        .resena-autor {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .resena-avatar {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .resena-info h4 {
+            font-family: 'Syne', sans-serif;
+            margin-bottom: 0.2rem;
+        }
+
+        .resena-info p {
+            font-size: 0.85rem;
+            color: #888;
+        }
+
+        /* FAQ */
+        .faq {
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+            border-top: 1px solid rgba(217, 37, 28, 0.1);
+            border-bottom: 1px solid rgba(217, 37, 28, 0.1);
+        }
+
+        .faq .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq h2 {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 3rem;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .faq-item {
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(217, 37, 28, 0.2);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            background: rgba(217, 37, 28, 0.05);
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
