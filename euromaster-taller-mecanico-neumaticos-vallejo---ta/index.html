@@ -1,0 +1,503 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Euromaster Taller Mecánico - Neumáticos y mecánica rápida en Fuencarral, Madrid. 4.5★ en 153 reseñas. Pide cita online.">
+    <meta name="keywords" content="taller mecánico Fuencarral, neumáticos Madrid, cambio de ruedas, mecánica rápida">
+    <meta name="theme-color" content="#D9251C">
+    <title>Euromaster Taller Mecánico Neumáticos Vallejo - Tárrega | Fuencarral Madrid</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #080808;
+            color: #ffffff;
+            font-family: 'DM Sans', sans-serif;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Syne', sans-serif;
+            font-weight: 700;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* NAVBAR */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(8, 8, 8, 0.98);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(217, 37, 28, 0.2);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: #D9251C;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 14px;
+            font-weight: 600;
+            color: #ffffff;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #D9251C;
+        }
+
+        .nav-cta {
+            background: #D9251C;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        .nav-cta:hover {
+            background: #b01a14;
+            transform: translateY(-2px);
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* HERO */
+        .hero {
+            margin-top: 70px;
+            height: 600px;
+            background: linear-gradient(135deg, rgba(217, 37, 28, 0.3) 0%, rgba(8, 8, 8, 0.8) 100%), 
+                        url('https://picsum.photos/seed/Euromasthero/1800/1000') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            text-align: center;
+            z-index: 2;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .hero h1 {
+            font-size: clamp(36px, 8vw, 64px);
+            margin-bottom: 20px;
+            line-height: 1.2;
+            color: #ffffff;
+        }
+
+        .hero h1 .highlight {
+            color: #D9251C;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: #cccccc;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 14px 32px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 700;
+            border: 2px solid transparent;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: #D9251C;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #b01a14;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(217, 37, 28, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid #D9251C;
+        }
+
+        .btn-secondary:hover {
+            background: #D9251C;
+            transform: translateY(-3px);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* STATS BAR */
+        .stats {
+            background: linear-gradient(90deg, #1a1a1a 0%, #0f0f0f 100%);
+            padding: 50px 20px;
+            border-top: 1px solid rgba(217, 37, 28, 0.2);
+            border-bottom: 1px solid rgba(217, 37, 28, 0.2);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 48px;
+            font-weight: 800;
+            color: #D9251C;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 16px;
+            color: #aaaaaa;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* SERVICIOS */
+        .services {
+            padding: 80px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: clamp(32px, 6vw, 52px);
+            margin-bottom: 15px;
+        }
+
+        .section-title .highlight {
+            color: #D9251C;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 18px;
+            color: #aaaaaa;
+            margin-bottom: 60px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+            padding: 40px;
+            border-radius: 12px;
+            border: 1px solid rgba(217, 37, 28, 0.1);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: #D9251C;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            border-color: rgba(217, 37, 28, 0.5);
+            transform: translateY(-10px);
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .service-card p {
+            color: #aaaaaa;
+            line-height: 1.8;
+        }
+
+        /* ABOUT */
+        .about {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+        }
+
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-image {
+            border-radius: 12px;
+            overflow: hidden;
+            aspect-ratio: 4/3;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about-content h2 {
+            font-size: clamp(32px, 6vw, 44px);
+            margin-bottom: 20px;
+        }
+
+        .about-content p {
+            color: #aaaaaa;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .about-features {
+            list-style: none;
+            margin: 30px 0;
+        }
+
+        .about-features li {
+            padding: 12px 0;
+            color: #aaaaaa;
+            display: flex;
+            gap: 12px;
+        }
+
+        .about-features li::before {
+            content: '✓';
+            color: #D9251C;
+            font-weight: 800;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        /* REVIEWS */
+        .reviews {
+            padding: 80px 20px;
+        }
+
+        .reviews-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .review-card {
+            background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid rgba(217, 37, 28, 0.1);
+        }
+
+        .review-rating {
+            color: #D9251C;
+            font-size: 14px;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+        }
+
+        .review-text {
+            color: #aaaaaa;
+            margin-bottom: 20px;
+            line-height: 1.8;
+            font-style: italic;
+        }
+
+        .review-author {
+            font-weight: 700;
+            color: #ffffff;
+            font-size: 14px;
+        }
+
+        .review-badge {
+            background: rgba(217, 37, 28, 0.1);
+            color: #D9251C;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        /* FAQ */
+        .faq {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+            border: 1px solid rgba(217, 37, 28, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            background: rgba(217, 37, 28, 0.05);
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .faq-question:hover {
+            background: rgba(217, 37, 28, 0.1);
+        }
+
+        .faq-toggle {
+            color: #D9251C;
+            font-size: 20px;
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            padding: 20px;
+            color: #aaaaaa;
+            display: none;
+            background: rgba(217, 37, 28, 0.02);
+            border-top: 1px solid rgba(217, 37, 28, 0.1);
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        /* CTA FINAL */
+        .final-cta {
+            padding: 80px 20px;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(217, 37, 28, 0.1) 0%, rgba(217, 37, 28, 0.05) 100%);
+            border: 1px solid rgba(217, 37, 28, 0.2);
+            border-radius: 12px;
+            margin: 0 20px 80px;
+        }
+
+        .final-cta h2 {
+            font
